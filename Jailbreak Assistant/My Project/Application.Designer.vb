@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Jailbreak_Assistant.Form1
+            Me.MainForm = Global.Jailbreak_Assistant.Main
         End Sub
     End Class
 End Namespace

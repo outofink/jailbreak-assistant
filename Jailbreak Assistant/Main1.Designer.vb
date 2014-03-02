@@ -24,22 +24,26 @@ Namespace My.Resources
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
-    Public Module Resources
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+    Public Class Main
         
-        Private resourceMan As Global.System.Resources.ResourceManager
+        Private Shared resourceMan As Global.System.Resources.ResourceManager
         
-        Private resourceCulture As Global.System.Globalization.CultureInfo
+        Private Shared resourceCulture As Global.System.Globalization.CultureInfo
+        
+        <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
+        Friend Sub New()
+            MyBase.New
+        End Sub
         
         '''<summary>
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Public ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        Public Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Jailbreak_Assistant.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Jailbreak_Assistant.Main", GetType(Main).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -51,7 +55,7 @@ Namespace My.Resources
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Public Property Culture() As Global.System.Globalization.CultureInfo
+        Public Shared Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
@@ -61,13 +65,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
+        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
         '''</summary>
-        Public ReadOnly Property MobileDevice() As Byte()
+        Public Shared ReadOnly Property Timer1_TrayLocation() As System.Drawing.Point
             Get
-                Dim obj As Object = ResourceManager.GetObject("MobileDevice", resourceCulture)
-                Return CType(obj,Byte())
+                Dim obj As Object = ResourceManager.GetObject("Timer1.TrayLocation", resourceCulture)
+                Return CType(obj,System.Drawing.Point)
             End Get
         End Property
-    End Module
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=106,Y=17}.
+        '''</summary>
+        Public Shared ReadOnly Property Timer2_TrayLocation() As System.Drawing.Point
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Timer2.TrayLocation", resourceCulture)
+                Return CType(obj,System.Drawing.Point)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=195,Y=17}.
+        '''</summary>
+        Public Shared ReadOnly Property Timer3_TrayLocation() As System.Drawing.Point
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Timer3.TrayLocation", resourceCulture)
+                Return CType(obj,System.Drawing.Point)
+            End Get
+        End Property
+    End Class
 End Namespace
