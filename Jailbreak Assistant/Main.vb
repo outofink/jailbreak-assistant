@@ -142,7 +142,7 @@ Public Class Main
         Else
             'If no device is connected then keep waiting
             Button2.Enabled = False
-            Label1.Text = "Waiting for device" + cc
+            Label1.Text = "Waiting for iDevice" + cc
         End If
     End Sub
 
@@ -164,7 +164,7 @@ Public Class Main
                 cc = ""
             End If
             cc = cc + "."
-            Label1.Text = "Waiting for device" + cc
+            Label1.Text = "Waiting for iDevice" + cc
         ElseIf iphone.IsConnected = True Then
             'The user plugged their devcie back in!
             Button2.Enabled = True

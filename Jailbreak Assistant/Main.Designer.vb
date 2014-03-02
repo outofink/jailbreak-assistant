@@ -55,9 +55,9 @@ Partial Class Main
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label1.Location = New System.Drawing.Point(12, 159)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.Size = New System.Drawing.Size(97, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Waiting for device"
+        Me.Label1.Text = "Waiting for iDevice"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label1.UseMnemonic = False
         '
