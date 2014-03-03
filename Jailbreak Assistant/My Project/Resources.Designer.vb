@@ -59,5 +59,12 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        
+        Public ReadOnly Property devices() As String
+            Get
+                Return ResourceManager.GetString("devices", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

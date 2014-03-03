@@ -65,27 +65,17 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
+        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
         '''</summary>
-        Public Shared ReadOnly Property Timer1_TrayLocation() As System.Drawing.Point
+        Public Shared ReadOnly Property AutoTimer_TrayLocation() As System.Drawing.Point
             Get
-                Dim obj As Object = ResourceManager.GetObject("Timer1.TrayLocation", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("AutoTimer.TrayLocation", resourceCulture)
                 Return CType(obj,System.Drawing.Point)
             End Get
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=106,Y=17}.
-        '''</summary>
-        Public Shared ReadOnly Property Timer2_TrayLocation() As System.Drawing.Point
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Timer2.TrayLocation", resourceCulture)
-                Return CType(obj,System.Drawing.Point)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=195,Y=17}.
+        '''  Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
         '''</summary>
         Public Shared ReadOnly Property Timer3_TrayLocation() As System.Drawing.Point
             Get

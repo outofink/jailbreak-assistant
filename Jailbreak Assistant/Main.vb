@@ -25,7 +25,7 @@ Public Class Main
     Dim dicto As New Dictionary(Of String, List(Of String))
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
-        Timer1.Start()
+        AutoTimer.Start()
         Button2.Enabled = False
         RadioButton1.Checked = True
         Dim device, name, carrier As String
@@ -52,54 +52,7 @@ Public Class Main
 
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        'Cool little thing for the waiting part, not important
-        If cc = "..." Then
-            cc = ""
-        End If
-        cc = cc + "."
-        'Do this when iPhone is connected...
-        If iphone.IsConnected = True Then
-            Button2.Enabled = True
-            Label1.Text = "Connected (Automatic Mode)"
-            ProgressBar1.Style = ProgressBarStyle.Blocks
-            ProgressBar1.Value = 100
-            Timer1.Stop()
-            Timer2.Start()
-
-           
-            If dicto.ContainsKey(iphone.DeviceProductType) Then
-                Dim listo As New List(Of String)
-                Dim blob As String
-                listo = dicto.Item(iphone.DeviceProductType)
-                For Each blob In listo.GetRange(0, 1)
-                    iPhonev = blob
-                Next
-                For Each blob In listo.GetRange(1, 1)
-                    extra = blob
-                Next
-            End If
-
-            'Display it
-            firmware = iphone.DeviceVersion
-            model = iphone.DeviceModelNumber
-
-            Label3.Text = firmware + " (" + iphone.DeviceBuildVersion + ")"
-            Label2.Text = iPhonev
-            Label4.Text = model
-            Label9.Text = extra
-        Else
-            'If no device is connected then keep waiting
-            Button2.Enabled = False
-            Label1.Text = "Waiting for iDevice" + cc
-            Label3.Text = firmware
-            Label2.Text = ""
-            Label4.Text = ""
-            Label9.Text = ""
-        End If
-    End Sub
-
-    Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
+    Private Sub AutoTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoTimer.Tick
         If iphone.IsConnected = False Then
             'The user unplugged their device, wait for them to plug it back in
             'Resetting values
@@ -129,13 +82,19 @@ Public Class Main
             If dicto.ContainsKey(iphone.DeviceProductType) Then
                 Dim listo As New List(Of String)
                 Dim blob As String
-                listo = dicto.Item(iphone.DeviceProductType)
-                For Each blob In listo.GetRange(0, 1)
-                    iPhonev = blob
-                Next
-                For Each blob In listo.GetRange(1, 1)
-                    extra = blob
-                Next
+                Try
+                    listo = dicto.Item(iphone.DeviceProductType)
+                    For Each blob In listo.GetRange(0, 1)
+                        iPhonev = blob
+                    Next
+                    For Each blob In listo.GetRange(1, 1)
+                        extra = blob
+                    Next
+                Catch ex As Exception
+
+                End Try
+
+                
             End If
             'Display it
             firmware = iphone.DeviceVersion
@@ -164,8 +123,7 @@ Public Class Main
 
     Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
         If RadioButton2.Checked = True Then
-            Timer1.Stop()
-            Timer2.Stop()
+            AutoTimer.Stop()
             Label1.Text = "Manual mode"
             ProgressBar1.Style = ProgressBarStyle.Blocks
             ProgressBar1.Value = 0
@@ -175,14 +133,13 @@ Public Class Main
             extra = ""
             Timer3.Start()
         Else
-            Timer2.Start()
+            AutoTimer.Start()
             Timer3.Stop()
         End If
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Timer1.Stop()
-        Timer2.Stop()
+        AutoTimer.Stop()
         Label1.Text = "Manual mode"
         ProgressBar1.Style = ProgressBarStyle.Blocks
         ProgressBar1.Value = 0
