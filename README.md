@@ -13,4 +13,4 @@ A Windows jailbreak assistant which tells you what jailbreak software to use jus
 <a name="Requirements"/>
 ## Requirements
 
-- **.NET Framework 4.0**
+- .NET Framework 4.0
