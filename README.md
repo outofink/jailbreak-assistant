@@ -1,5 +1,6 @@
 <a name="logo"/>
 <div align="center">
+<a href="http://www.outofinksoftware.com" target="_blank">
 <img src="https://raw.github.com/outofink/jailbreak-assistant/master/Black_Lock.png" alt="Jailbreak Assistant logo" width="200" height="200"></img>
 </a>
 </div>
