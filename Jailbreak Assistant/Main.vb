@@ -1,4 +1,6 @@
 ﻿Imports MobileDevice
+Imports System.Xml
+
 'Copyright (C) <2014>  <Out of Ink Software>
 
 '    This program is free software: you can redistribute it and/or modify
@@ -19,15 +21,34 @@ Public Class Main
     Dim iphone As New MobileDevice.iPhone
     Dim cc As String
     Dim mode, iPhonev, extra, firmware, model As String
+    Dim document As XmlReader
+    Dim dicto As New Dictionary(Of String, List(Of String))
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
         Timer1.Start()
-        Label2.Text = ""
-        Label3.Text = ""
-        Label4.Text = ""
-        Label9.Text = ""
         Button2.Enabled = False
         RadioButton1.Checked = True
+        Dim device, name, carrier As String
+        Using document As XmlReader = New XmlTextReader("devices.xml")
+            While (document.Read())
+                document.ReadToFollowing("Type")
+
+                document.MoveToAttribute("device")
+                device = document.Value.ToString
+
+                document.MoveToAttribute("name")
+                name = document.Value.ToString
+
+                document.MoveToAttribute("carrier")
+                carrier = document.Value.ToString
+
+                If device <> "" Then
+                    dicto.Add(device, New List(Of String))
+                    dicto(device).Add(name)
+                    dicto(device).Add(carrier)
+                End If
+            End While
+        End Using
 
     End Sub
 
@@ -45,92 +66,20 @@ Public Class Main
             ProgressBar1.Value = 100
             Timer1.Stop()
             Timer2.Start()
-            'Determine what type of device it is...
-            If iphone.DeviceProductType = "iPod3,1" Then
-                iPhonev = "iPod Touch 3G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod5,1" Then
-                iPhonev = "iPod Touch 5G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod4,1" Then
-                iPhonev = "iPod Touch 4G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod2,1" Then
-                iPhonev = "iPod Touch 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod1,1" Then
-                iPhonev = "iPod Touch 1G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad3,1" Then
-                iPhonev = "iPad 3G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad3,2" Then
-                iPhonev = "iPad 3G"
-                extra = "CDMA"
-            ElseIf iphone.DeviceProductType = "iPad3,3" Then
-                iPhonev = "iPad 3G"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPad3,4" Then
-                iPhonev = "iPad 4G"
-                extra = "Wifi"
-            ElseIf iphone.DeviceProductType = "iPad3,5" Then
-                iPhonev = "iPad 4G"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPad3,6" Then
-                iPhonev = "iPad 4G"
-                extra = "Global"
-            ElseIf iphone.DeviceProductType = "iPad1,1" Then
-                iPhonev = "iPad 1G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,1" Then
-                iPhonev = "iPad 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,2" Then
-                iPhonev = "iPad 2G"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPad2,3" Then
-                iPhonev = "iPad 2G"
-                extra = "CDMA"
-            ElseIf iphone.DeviceProductType = "iPad2,4" Then
-                iPhonev = "iPad 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,5" Then
-                iPhonev = "iPad Mini"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,6" Then
-                iPhonev = "iPad Mini"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPad2,7" Then
-                iPhonev = "iPad Mini"
-                extra = "Global"
-            ElseIf iphone.DeviceProductType = "iPhone1,1" Then
-                iPhonev = "iPhone 2G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone1,2" Then
-                iPhonev = "iPhone 3G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone2,1" Then
-                iPhonev = "iPhone 3GS"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone3,3" Then
-                iPhonev = "iPhone 4"
-                extra = "CDMA"
-            ElseIf iphone.DeviceProductType = "iPhone3,1" Then
-                iPhonev = "iPhone 4"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPhone3,2" Then
-                iPhonev = "iPhone 4"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPhone4,1" Then
-                iPhonev = "iPhone 4S"
-                extra = "AT&T/Verizon/Sprint"
-            ElseIf iphone.DeviceProductType = "iPhone5,1" Then
-                iPhonev = "iPhone 5"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPhone5,2" Then
-                iPhonev = "iPhone 5"
-                extra = "Global"
+
+           
+            If dicto.ContainsKey(iphone.DeviceProductType) Then
+                Dim listo As New List(Of String)
+                Dim blob As String
+                listo = dicto.Item(iphone.DeviceProductType)
+                For Each blob In listo.GetRange(0, 1)
+                    iPhonev = blob
+                Next
+                For Each blob In listo.GetRange(1, 1)
+                    extra = blob
+                Next
             End If
+
             'Display it
             firmware = iphone.DeviceVersion
             model = iphone.DeviceModelNumber
@@ -143,6 +92,10 @@ Public Class Main
             'If no device is connected then keep waiting
             Button2.Enabled = False
             Label1.Text = "Waiting for iDevice" + cc
+            Label3.Text = firmware
+            Label2.Text = ""
+            Label4.Text = ""
+            Label9.Text = ""
         End If
     End Sub
 
@@ -172,78 +125,17 @@ Public Class Main
             ProgressBar1.Value = 100
             Label1.Text = "Connected (Automatic Mode)"
             'Once again determine which device they have...
-            If iphone.DeviceProductType = "iPod3,1" Then
-                iPhonev = "iPod Touch 3G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod5,1" Then
-                iPhonev = "iPod Touch 5G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod4,1" Then
-                iPhonev = "iPod Touch 4G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod2,1" Then
-                iPhonev = "iPod Touch 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPod1,1" Then
-                iPhonev = "iPod Touch 1G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad3,1" Then
-                iPhonev = "iPad 3G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad3,2" Then
-                iPhonev = "iPad 3G"
-                extra = "Verizon"
-            ElseIf iphone.DeviceProductType = "iPad3,3" Then
-                iPhonev = "iPad 3G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPad3,3" Then
-                iPhonev = "iPad 4G"
-                extra = "Wifi"
-            ElseIf iphone.DeviceProductType = "iPad1,1" Then
-                iPhonev = "iPad 1G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,1" Then
-                iPhonev = "iPad 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,2" Then
-                iPhonev = "iPad 2G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPad2,3" Then
-                iPhonev = "iPad 2G"
-                extra = "Verizon"
-            ElseIf iphone.DeviceProductType = "iPad2,4" Then
-                iPhonev = "iPad 2G"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPad2,5" Then
-                iPhonev = "iPad Mini"
-                extra = "WiFi"
-            ElseIf iphone.DeviceProductType = "iPhone1,1" Then
-                iPhonev = "iPhone 2G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone1,2" Then
-                iPhonev = "iPhone 3G"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone2,1" Then
-                iPhonev = "iPhone 3GS"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone3,3" Then
-                iPhonev = "iPhone 4"
-                extra = "Verizon"
-            ElseIf iphone.DeviceProductType = "iPhone3,1" Then
-                iPhonev = "iPhone 4"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone3,2" Then
-                iPhonev = "iPhone 4"
-                extra = "AT&T"
-            ElseIf iphone.DeviceProductType = "iPhone4,1" Then
-                iPhonev = "iPhone 4S"
-                extra = "AT&T/Verizon/Sprint"
-            ElseIf iphone.DeviceProductType = "iPhone5,1" Then
-                iPhonev = "iPhone 5"
-                extra = "GSM"
-            ElseIf iphone.DeviceProductType = "iPhone5,2" Then
-                iPhonev = "iPhone 5"
-                extra = "GSM/CDMA"
+
+            If dicto.ContainsKey(iphone.DeviceProductType) Then
+                Dim listo As New List(Of String)
+                Dim blob As String
+                listo = dicto.Item(iphone.DeviceProductType)
+                For Each blob In listo.GetRange(0, 1)
+                    iPhonev = blob
+                Next
+                For Each blob In listo.GetRange(1, 1)
+                    extra = blob
+                Next
             End If
             'Display it
             firmware = iphone.DeviceVersion
