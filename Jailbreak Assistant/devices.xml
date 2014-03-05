@@ -88,9 +88,21 @@
   />
   
   <Type
-  device="iPad2,4" name="iPad 2" carrier="WiFi"
+    device="iPad2,4" name="iPad 2" carrier="WiFi"
   />
-  
+
+  <Type
+    device="iPad2,5" name="iPad Mini" carrier="WiFi"
+  />
+
+  <Type
+    device="iPad2,6" name="iPad Mini" carrier="CDMA"
+  />
+
+  <Type
+    device="iPad2,7" name="iPad Mini" carrier="Global"
+  />
+
   <Type
     device="iPad3,1" name="iPad 3" carrier="WiFi"
   />
@@ -123,4 +135,11 @@
     device="iPad4,2" name="iPad Air" carrier="Global"
   />
 
+  <Type
+    device="iPad4,3" name="iPad Mini 2" carrier="WiFi"
+  />
+
+  <Type
+    device="iPad4,4" name="iPad Mini 2" carrier="Global"
+  />
 </root>
