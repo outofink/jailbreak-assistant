@@ -92,17 +92,18 @@ Partial Class Main
         '
         'Button1
         '
+        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(352, 108)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 31)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "Recovery Assistant"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label4
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12!)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.Label4.Location = New System.Drawing.Point(81, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(0, 19)
@@ -110,8 +111,8 @@ Partial Class Main
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8!)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label5.Location = New System.Drawing.Point(12, 47)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(27, 13)
@@ -120,8 +121,8 @@ Partial Class Main
         '
         'Label6
         '
-        Me.Label6.AutoSize = true
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 8!)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label6.Location = New System.Drawing.Point(12, 17)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 13)
@@ -130,8 +131,8 @@ Partial Class Main
         '
         'Label7
         '
-        Me.Label7.AutoSize = true
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 8!)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label7.Location = New System.Drawing.Point(12, 77)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
@@ -140,8 +141,8 @@ Partial Class Main
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 8!)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label8.Location = New System.Drawing.Point(12, 107)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 13)
@@ -150,23 +151,23 @@ Partial Class Main
         '
         'Label9
         '
-        Me.Label9.AutoSize = true
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12!)
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.Label9.Location = New System.Drawing.Point(81, 102)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(0, 19)
         Me.Label9.TabIndex = 13
-        Me.Label9.UseMnemonic = false
+        Me.Label9.UseMnemonic = False
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(274, 12)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(192, 90)
         Me.Button2.TabIndex = 14
         Me.Button2.Text = "Help me Jailbreak!"
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -175,34 +176,36 @@ Partial Class Main
         Me.Button3.Size = New System.Drawing.Size(114, 29)
         Me.Button3.TabIndex = 15
         Me.Button3.Text = "Credits"
-        Me.Button3.UseVisualStyleBackColor = true
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Timer3
         '
         '
         'Button4
         '
+        Me.Button4.Enabled = False
         Me.Button4.Location = New System.Drawing.Point(5, 36)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(145, 23)
         Me.Button4.TabIndex = 19
         Me.Button4.Text = "Manually choose device"
-        Me.Button4.UseVisualStyleBackColor = true
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'RadioButton1
         '
-        Me.RadioButton1.AutoSize = true
+        Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(6, 13)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(72, 17)
         Me.RadioButton1.TabIndex = 20
-        Me.RadioButton1.TabStop = true
+        Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Automatic"
-        Me.RadioButton1.UseVisualStyleBackColor = true
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
-        Me.RadioButton2.AutoSize = true
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Enabled = False
         Me.RadioButton2.Location = New System.Drawing.Point(84, 13)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(60, 17)
