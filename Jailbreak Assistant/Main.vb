@@ -1,4 +1,4 @@
-﻿Imports MobileDevice
+Imports MobileDevice
 Imports System.Xml
 
 'Copyright (C) <2014>  <Out of Ink Software>
@@ -19,10 +19,9 @@ Imports System.Xml
 Public Class Main
 
     Dim iphone As New MobileDevice.iPhone
-    Dim cc As String
-    Dim mode, iPhonev, extra, firmware, model As String
+    Dim dots, mode, iPhonev, extra, firmware, model As String
     Dim document As XmlReader
-    Dim dicto As New Dictionary(Of String, List(Of String))
+    Dim details As New Dictionary(Of String, List(Of String))
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
         AutoTimer.Start()
@@ -43,9 +42,9 @@ Public Class Main
                 carrier = document.Value.ToString
 
                 If device <> "" Then
-                    dicto.Add(device, New List(Of String))
-                    dicto(device).Add(name)
-                    dicto(device).Add(carrier)
+                    details.Add(device, New List(Of String))
+                    details(device).Add(name)
+                    details(device).Add(carrier)
                 End If
             End While
         End Using
@@ -66,11 +65,11 @@ Public Class Main
             Label4.Text = model
             Label9.Text = extra
             ProgressBar1.Style = ProgressBarStyle.Marquee
-            If cc = "..." Then
-                cc = ""
+            If dots = "..." Then
+                dots = ""
             End If
-            cc = cc + "."
-            Label1.Text = "Waiting for iDevice" + cc
+            dots = dots + "."
+            Label1.Text = "Waiting for iDevice" + dots
         ElseIf iphone.IsConnected = True Then
             'The user plugged their devcie back in!
             Button2.Enabled = True
@@ -79,11 +78,11 @@ Public Class Main
             Label1.Text = "Connected (Automatic Mode)"
             'Once again determine which device they have...
 
-            If dicto.ContainsKey(iphone.DeviceProductType) Then
+            If details.ContainsKey(iphone.DeviceProductType) Then
                 Dim listo As New List(Of String)
                 Dim blob As String
                 Try
-                    listo = dicto.Item(iphone.DeviceProductType)
+                    listo = details.Item(iphone.DeviceProductType)
                     For Each blob In listo.GetRange(0, 1)
                         iPhonev = blob
                     Next
