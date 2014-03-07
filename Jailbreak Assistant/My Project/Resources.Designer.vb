@@ -98,6 +98,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;root&gt;
+        '''&lt;device name=&quot;iPhone 2G&quot; version=&quot;3.1.3&quot;/&gt;
+        '''&lt;device name=&quot;iPhone 3G&quot; version=&quot;3.1.3,4.0,4.0.1,4.0.2,4.1,4.2.1&quot;/&gt;
+        '''&lt;device name=&quot;iPhone 3GS&quot; version=&quot;3.1.3,4.0,4.0.1,4.0.2,4.1,4.2.1,4.3,4.3.1,4.3.2,4.3.3,4.3.4,4.3.5,5.0,5.0.1,5.1,5.1.1,6.0,6.0.1,6.1,6.1.2,6.1.3,6.1.6&quot;/&gt;
+        '''&lt;device name=&quot;iPhone 4&quot; version=&quot;4.0,4.0.1,4.0.2,4.1,4.2.1,4.3,4.3.1,4.3.2,4.3.3,4.3.4,4.3.5,5.0,5.0.1,5.1,5.1.1,6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.1,7.0.2,7.0.3,7.0.4,7.0.6&quot;/&gt;
+        '''&lt;device name=&quot;iPhone 4S&quot; version=&quot;5.0,5.0.1,5.1,5.1.1,6. [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ios() As String
+            Get
+                Return ResourceManager.GetString("ios", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
         Public ReadOnly Property LICENSE() As Byte()

@@ -200,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Black_Lock.ico" />
+    <None Include="ios.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="devices.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -22,13 +22,14 @@ Public Class Main
     Dim iphone As New MobileDevice.iPhone
     Dim dots, mode, device, carrier, ios, model As String
     Dim document As XmlReader
-    Dim details As New Dictionary(Of String, List(Of String))
+    Dim details, manual As New Dictionary(Of String, List(Of String))
+    Dim devices As New List(Of String)
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
         AutoTimer.Start()
         jailbreakButton.Enabled = False
         AutoRadio.Checked = True
-        Dim device, name, carrier As String
+        Dim device, name, carrier, version As String
         Using document As XmlReader = New XmlTextReader("devices.xml")
             While (document.Read())
                 document.ReadToFollowing("Type")
@@ -46,6 +47,23 @@ Public Class Main
                     details.Add(device, New List(Of String))
                     details(device).Add(name)
                     details(device).Add(carrier)
+                End If
+            End While
+        End Using
+        Using document As XmlReader = New XmlTextReader("ios.xml")
+            While (document.Read())
+                document.ReadToFollowing("device")
+
+                document.MoveToAttribute("name")
+                name = document.Value.ToString
+
+                document.MoveToAttribute("version")
+                version = document.Value.ToString
+
+                If name <> "" Then
+                    manual.Add(name, New List(Of String))
+                    manual(name) = version.Split(",").ToList()
+                    devices.Add(name)
                 End If
             End While
         End Using
