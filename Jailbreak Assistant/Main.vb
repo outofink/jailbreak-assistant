@@ -110,7 +110,10 @@ Public Class Main
 
     Private Sub aboutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aboutButton.Click
         'Credits!
-        MessageBox.Show("Created by Out of Ink Software. If you find any bugs or if there's anything missing, report at https://github.com/outofink/jailbreak-assistant." & vbCrLf & vbCrLf & "MobileDevice.dll for VB by Fallensn0w.", "Jailbreak Assistant")
+        Dim f As New About
+        f.ShowDialog()
+        'About.Show()
+        'MessageBox.Show("Created by Out of Ink Software. If you find any bugs or if there's anything missing, report at https://github.com/outofink/jailbreak-assistant." & vbCrLf & vbCrLf & "MobileDevice.dll for VB by Fallensn0w.", "Jailbreak Assistant")
     End Sub
 
     Private Sub jailbreakButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles jailbreakButton.Click

@@ -60,10 +60,50 @@ Namespace My.Resources
             End Set
         End Property
         
-        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;root&gt;
+        '''  &lt;Type
+        '''    device=&quot;iPhone1,1&quot; name=&quot;iPhone 2G&quot; carrier=&quot;GSM&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone1,2&quot; name=&quot;iPhone 3G&quot; carrier=&quot;GSM&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone2,1&quot; name=&quot;iPhone 3GS&quot; carrier=&quot;GSM&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone3,1&quot; name=&quot;iPhone 4&quot; carrier=&quot;GSM&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone3,2&quot; name=&quot;iPhone 4&quot; carrier=&quot;GSM&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone3,3&quot; name=&quot;iPhone 4&quot; carrier=&quot;CDMA&quot;
+        '''  /&gt;
+        '''
+        '''  &lt;Type
+        '''    device=&quot;iPhone4,1&quot; name=&quot;iPhone 4S&quot; carrier=&quot;Global&quot;
+        '''  /&gt;
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
         Public ReadOnly Property devices() As String
             Get
                 Return ResourceManager.GetString("devices", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Public ReadOnly Property LICENSE() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("LICENSE", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
     End Module
