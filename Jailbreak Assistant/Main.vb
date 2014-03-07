@@ -1,7 +1,8 @@
 Imports MobileDevice
 Imports System.Xml
 
-'Copyright (C) <2014>  <Out of Ink Software>
+'    Jailbreak Assistant: A Windows jailbreak assistant which tells you what jailbreak software to use just by plugging your iDevice in!
+'    Copyright (C) 2014 Out of Ink Software
 
 '    This program is free software: you can redistribute it and/or modify
 '    it under the terms of the GNU General Public License as published by
@@ -19,14 +20,14 @@ Imports System.Xml
 Public Class Main
 
     Dim iphone As New MobileDevice.iPhone
-    Dim dots, mode, iPhonev, extra, firmware, model As String
+    Dim dots, mode, device, carrier, ios, model As String
     Dim document As XmlReader
     Dim details As New Dictionary(Of String, List(Of String))
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
         AutoTimer.Start()
-        Button2.Enabled = False
-        RadioButton1.Checked = True
+        jailbreakButton.Enabled = False
+        AutoRadio.Checked = True
         Dim device, name, carrier As String
         Using document As XmlReader = New XmlTextReader("devices.xml")
             While (document.Read())
@@ -55,27 +56,27 @@ Public Class Main
         If iphone.IsConnected = False Then
             'The user unplugged their device, wait for them to plug it back in
             'Resetting values
-            Button2.Enabled = False
-            iPhonev = ""
-            firmware = ""
+            jailbreakButton.Enabled = False
+            device = ""
+            ios = ""
             model = ""
-            extra = ""
-            Label2.Text = iPhonev
-            Label3.Text = firmware
-            Label4.Text = model
-            Label9.Text = extra
-            ProgressBar1.Style = ProgressBarStyle.Marquee
+            carrier = ""
+            deviceText.Text = device
+            iosText.Text = ios
+            modelText.Text = model
+            CarrierText.Text = carrier
+            ProgressBar.Style = ProgressBarStyle.Marquee
             If dots = "..." Then
                 dots = ""
             End If
             dots = dots + "."
-            Label1.Text = "Waiting for iDevice" + dots
+            statusText.Text = "Waiting for iDevice" + dots
         ElseIf iphone.IsConnected = True Then
             'The user plugged their devcie back in!
-            Button2.Enabled = True
-            ProgressBar1.Style = ProgressBarStyle.Blocks
-            ProgressBar1.Value = 100
-            Label1.Text = "Connected (Automatic Mode)"
+            'jailbreakButton.Enabled = True
+            ProgressBar.Style = ProgressBarStyle.Blocks
+            ProgressBar.Value = 100
+            statusText.Text = "Connected (Automatic Mode)"
             'Once again determine which device they have...
 
             If details.ContainsKey(iphone.DeviceProductType) Then
@@ -84,75 +85,72 @@ Public Class Main
                 Try
                     listo = details.Item(iphone.DeviceProductType)
                     For Each blob In listo.GetRange(0, 1)
-                        iPhonev = blob
+                        device = blob
                     Next
                     For Each blob In listo.GetRange(1, 1)
-                        extra = blob
+                        carrier = blob
                     Next
                 Catch ex As Exception
-
                 End Try
-
-                
             End If
             'Display it
-            firmware = iphone.DeviceVersion
+            ios = iphone.DeviceVersion
             model = iphone.DeviceModelNumber
-            Label3.Text = firmware + " (" + iphone.DeviceBuildVersion + ")"
-            Label2.Text = iPhonev
-            Label4.Text = model
-            Label9.Text = extra
+            iosText.Text = ios + " (" + iphone.DeviceBuildVersion + ")"
+            deviceText.Text = device
+            modelText.Text = model
+            CarrierText.Text = carrier
         End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub recoveryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles recoveryButton.Click
         'Recovery mode stuff...
         'Form2.Show()
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+    Private Sub aboutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aboutButton.Click
         'Credits!
-        MessageBox.Show("Created by Out of Ink Software. If you find any bugs or if there's anything missing, report at https://github.com/outofink/jailbreak-assistant.", "Jailbreak Assistant")
+        MessageBox.Show("Created by Out of Ink Software. If you find any bugs or if there's anything missing, report at https://github.com/outofink/jailbreak-assistant." & vbCrLf & vbCrLf & "MobileDevice.dll for VB by Fallensn0w.", "Jailbreak Assistant")
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub jailbreakButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles jailbreakButton.Click
         'User wants to know how to jailbreak!
 
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
-        If RadioButton2.Checked = True Then
+    Private Sub ManualRadio_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ManualRadio.CheckedChanged
+        If ManualRadio.Checked = True Then
             AutoTimer.Stop()
-            Label1.Text = "Manual mode"
-            ProgressBar1.Style = ProgressBarStyle.Blocks
-            ProgressBar1.Value = 0
-            Button2.Enabled = True
+            statusText.Text = "Manual mode"
+            ProgressBar.Style = ProgressBarStyle.Blocks
+            ProgressBar.Value = 0
+            'jailbreakButton.Enabled = True
             'Form6.Show()
             model = ""
-            extra = ""
-            Timer3.Start()
+            carrier = ""
+            manualTimer.Start()
         Else
             AutoTimer.Start()
-            Timer3.Stop()
+            manualTimer.Stop()
         End If
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+    Private Sub manualButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualButton.Click
         AutoTimer.Stop()
-        Label1.Text = "Manual mode"
-        ProgressBar1.Style = ProgressBarStyle.Blocks
-        ProgressBar1.Value = 0
-        Button2.Enabled = True
+        statusText.Text = "Manual mode"
+        ProgressBar.Style = ProgressBarStyle.Blocks
+        ProgressBar.Value = 0
+        'jailbreakButton.Enabled = True
         'Form6.Show()
         model = ""
-        extra = ""
-        Timer3.Start()
-        RadioButton2.Checked = True
+        carrier = ""
+        manualTimer.Start()
+        ManualRadio.Checked = True
     End Sub
-    Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
-        Label3.Text = firmware
-        Label2.Text = iPhonev
-        Label4.Text = model
-        Label9.Text = extra
+    Private Sub manualTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualTimer.Tick
+        iosText.Text = ios
+        deviceText.Text = device
+        modelText.Text = model
+        CarrierText.Text = carrier
     End Sub
 End Class
