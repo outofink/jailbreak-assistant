@@ -9,8 +9,3 @@
 ## Jailbreak Assistant
 
 A Windows jailbreak assistant which tells you what jailbreak software to use just by plugging your iDevice in!
-
-<a name="Requirements"/>
-## Requirements
-
-- [.NET Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=17851)
