@@ -129,6 +129,13 @@
       <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManualForm.Designer.vb">
+      <DependentUpon>ManualForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManualForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicMod.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -153,6 +160,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualForm.resx">
+      <DependentUpon>ManualForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>

@@ -1,4 +1,3 @@
-Imports MobileDevice
 Imports System.Xml
 
 '    Jailbreak Assistant: A Windows jailbreak assistant which tells you what jailbreak software to use just by plugging your iDevice in!
@@ -19,11 +18,7 @@ Imports System.Xml
 
 Public Class Main
 
-    Dim iphone As New MobileDevice.iPhone
-    Dim dots, mode, device, carrier, ios, model As String
-    Dim document As XmlReader
-    Dim details, manual As New Dictionary(Of String, List(Of String))
-    Dim devices As New List(Of String)
+
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Start checking for a device...
         AutoTimer.Start()
@@ -59,7 +54,7 @@ Public Class Main
 
                 document.MoveToAttribute("version")
                 version = document.Value.ToString
-
+                'MsgBox(version)
                 If name <> "" Then
                     manual.Add(name, New List(Of String))
                     manual(name) = version.Split(",").ToList()
@@ -139,34 +134,32 @@ Public Class Main
 
     End Sub
 
-    Private Sub ManualRadio_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ManualRadio.CheckedChanged
-        If ManualRadio.Checked = True Then
-            AutoTimer.Stop()
-            statusText.Text = "Manual mode"
-            ProgressBar.Style = ProgressBarStyle.Blocks
-            ProgressBar.Value = 0
-            'jailbreakButton.Enabled = True
-            'Form6.Show()
-            model = ""
-            carrier = ""
-            manualTimer.Start()
-        Else
-            AutoTimer.Start()
-            manualTimer.Stop()
+    Private Sub ManualRadio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ManualRadio.Click
+        If AutoTimer.Enabled = True Then
+            manualButton.PerformClick()
         End If
     End Sub
-
+    Private Sub AutoRadio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoRadio.Click
+        AutoTimer.Start()
+        manualTimer.Stop()
+    End Sub
     Private Sub manualButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualButton.Click
+        ManualRadio.Checked = True
         AutoTimer.Stop()
         statusText.Text = "Manual mode"
         ProgressBar.Style = ProgressBarStyle.Blocks
         ProgressBar.Value = 0
-        'jailbreakButton.Enabled = True
-        'Form6.Show()
+        cancelled = False
+        Dim f As New ManualForm
+        f.ShowDialog()
+
+        If cancelled = True And ok = False Then
+            'ManualRadio.Checked = False
+            AutoRadio.PerformClick()
+        End If
         model = ""
         carrier = ""
         manualTimer.Start()
-        ManualRadio.Checked = True
     End Sub
     Private Sub manualTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualTimer.Tick
         iosText.Text = ios

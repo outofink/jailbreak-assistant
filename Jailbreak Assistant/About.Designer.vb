@@ -37,7 +37,7 @@ Partial Class About
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(91, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(94, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -48,10 +48,11 @@ Partial Class About
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.Label1.Location = New System.Drawing.Point(12, 203)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(281, 65)
+        Me.Label1.Size = New System.Drawing.Size(297, 65)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Copyright © 2014 Out of Ink Software. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you find any bugs or if there's anythi" & _
     "ng missing, report at " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " MobileDevice.dll for VB by Fallensn0w." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
@@ -71,7 +72,7 @@ Partial Class About
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(218, 289)
+        Me.Button1.Location = New System.Drawing.Point(227, 289)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -91,7 +92,7 @@ Partial Class About
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 143)
+        Me.Label2.Location = New System.Drawing.Point(24, 143)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(254, 35)
         Me.Label2.TabIndex = 5
@@ -99,7 +100,7 @@ Partial Class About
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(113, 289)
+        Me.Button3.Location = New System.Drawing.Point(118, 289)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 6
@@ -110,7 +111,7 @@ Partial Class About
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(119, 181)
+        Me.Label3.Location = New System.Drawing.Point(124, 181)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
@@ -123,7 +124,7 @@ Partial Class About
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
-        Me.ClientSize = New System.Drawing.Size(305, 324)
+        Me.ClientSize = New System.Drawing.Size(314, 324)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)

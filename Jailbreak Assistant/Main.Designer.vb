@@ -184,7 +184,6 @@ Partial Class Main
         '
         'manualButton
         '
-        Me.manualButton.Enabled = False
         Me.manualButton.Location = New System.Drawing.Point(5, 36)
         Me.manualButton.Name = "manualButton"
         Me.manualButton.Size = New System.Drawing.Size(145, 23)
@@ -206,7 +205,6 @@ Partial Class Main
         'ManualRadio
         '
         Me.ManualRadio.AutoSize = True
-        Me.ManualRadio.Enabled = False
         Me.ManualRadio.Location = New System.Drawing.Point(84, 13)
         Me.ManualRadio.Name = "ManualRadio"
         Me.ManualRadio.Size = New System.Drawing.Size(60, 17)
