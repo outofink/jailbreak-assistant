@@ -62,6 +62,26 @@ Public Class Main
                 End If
             End While
         End Using
+        Using document As XmlReader = New XmlTextReader("jailbreak.xml")
+            While (document.Read())
+                document.ReadToFollowing("jailbreak")
+
+                document.MoveToAttribute("name")
+                name = document.Value.ToString
+
+                document.MoveToAttribute("version")
+                version = document.Value.ToString
+
+                document.MoveToAttribute("tool")
+                tool = document.Value.ToString
+
+                If name <> "" Then
+                    'manual.Add(name, New List(Of String))
+                    'manual(name) = version.Split(",").ToList()
+                    'devices.Add(name)
+                End If
+            End While
+        End Using
 
     End Sub
 
@@ -86,7 +106,7 @@ Public Class Main
             statusText.Text = "Waiting for iDevice" + dots
         ElseIf iphone.IsConnected = True Then
             'The user plugged their devcie back in!
-            'jailbreakButton.Enabled = True
+            jailbreakButton.Enabled = True
             ProgressBar.Style = ProgressBarStyle.Blocks
             ProgressBar.Value = 100
             statusText.Text = "Connected (Automatic Mode)"
@@ -131,6 +151,20 @@ Public Class Main
 
     Private Sub jailbreakButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles jailbreakButton.Click
         'User wants to know how to jailbreak!
+        'Dim frm As New Form
+        'frm.Size = New Size(300, 200)
+        'frm.Text = "New Form"
+
+        'Dim btn As New Button
+        'btn.Text = "Click Me"
+        'btn.Size = New Size(100, 30)
+        'btn.Location = New Point( _
+        '    (frm.ClientSize.Width - btn.Width) / 2, _
+        '    (frm.ClientSize.Height - btn.Height) / 2)
+        ''AddHandler btn.Click, AddressOf btn_Click
+        'frm.Controls.Add(btn)
+
+        'frm.Show()
 
     End Sub
 
@@ -158,5 +192,7 @@ Public Class Main
         deviceText.Text = device
         modelText.Text = ""
         CarrierText.Text = ""
+        jailbreakButton.Enabled = True
+
     End Sub
 End Class

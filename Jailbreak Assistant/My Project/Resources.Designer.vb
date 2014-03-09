@@ -112,6 +112,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;root&gt;
+        '''&lt;jailbreak name=&quot;iPhone 3GS&quot; version=&quot;6.0,6.0.1,6.1,6.1.2&quot; tool=&quot;evasi0n&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 3GS&quot; version=&quot;6.1.3,6.1.6&quot; tool=&quot;p0sixspwn&quot;/&gt;
+        '''
+        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;6.0,6.0.1,6.1,6.1.2&quot; tool=&quot;evasi0n&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;6.1.3&quot; tool=&quot;p0sixspwn&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;7.0,7.0.1,7.0.2,7.0.3,7.0.4,7.0.6&quot; tool=&quot;evasi0n7&quot;/&gt;
+        '''
+        '''&lt;jailbreak name=&quot;iPhone 4S&quot; version=&quot;6.0,6.0.1,6.1,6.1.1,6.1.2&quot; tool=&quot;evasi0n&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 4S&quot; version=&quot;6.1.3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property jailbreak() As String
+            Get
+                Return ResourceManager.GetString("jailbreak", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
         Public ReadOnly Property LICENSE() As Byte()

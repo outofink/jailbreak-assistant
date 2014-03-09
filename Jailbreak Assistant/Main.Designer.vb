@@ -50,7 +50,6 @@ Partial Class Main
         '
         Me.statusText.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.statusText.AutoSize = True
-        Me.statusText.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.statusText.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.statusText.Location = New System.Drawing.Point(12, 159)
         Me.statusText.Name = "statusText"
@@ -161,7 +160,6 @@ Partial Class Main
         '
         'jailbreakButton
         '
-        Me.jailbreakButton.Enabled = False
         Me.jailbreakButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jailbreakButton.Location = New System.Drawing.Point(274, 12)
         Me.jailbreakButton.Name = "jailbreakButton"
@@ -178,9 +176,6 @@ Partial Class Main
         Me.aboutButton.TabIndex = 15
         Me.aboutButton.Text = "About"
         Me.aboutButton.UseVisualStyleBackColor = True
-        '
-        'manualTimer
-        '
         '
         'manualButton
         '

@@ -210,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Black_Lock.ico" />
+    <None Include="jailbreak.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ios.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
