@@ -141,7 +141,6 @@ Public Class Main
     End Sub
     Private Sub AutoRadio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoRadio.Click
         AutoTimer.Start()
-        manualTimer.Stop()
     End Sub
     Private Sub manualButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualButton.Click
         ManualRadio.Checked = True
@@ -152,19 +151,12 @@ Public Class Main
         cancelled = False
         Dim f As New ManualForm
         f.ShowDialog()
-
         If cancelled = True And ok = False Then
-            'ManualRadio.Checked = False
             AutoRadio.PerformClick()
         End If
-        model = ""
-        carrier = ""
-        manualTimer.Start()
-    End Sub
-    Private Sub manualTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualTimer.Tick
         iosText.Text = ios
         deviceText.Text = device
-        modelText.Text = model
-        CarrierText.Text = carrier
+        modelText.Text = ""
+        CarrierText.Text = ""
     End Sub
 End Class
