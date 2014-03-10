@@ -76,9 +76,8 @@ Public Class Main
                 tool = document.Value.ToString
 
                 If name <> "" Then
-                    'manual.Add(name, New List(Of String))
-                    'manual(name) = version.Split(",").ToList()
-                    'devices.Add(name)
+                    jailbreak.Add(name + version, New List(Of String))
+                    jailbreak(name) = tool.Split(",").ToList()
                 End If
             End While
         End Using
