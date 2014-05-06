@@ -57,7 +57,7 @@ Public Class Main
                 'MsgBox(version)
                 If name <> "" Then
                     manual.Add(name, New List(Of String))
-                    manual(name) = version.Split(",").ToList()
+                    manual(name) = version.Split(","c).ToList()
                     devices.Add(name)
                 End If
             End While
@@ -77,7 +77,7 @@ Public Class Main
 
                 If name <> "" Then
                     jailbreak.Add(name + version, New List(Of String))
-                    jailbreak(name) = tool.Split(",").ToList()
+                    jailbreak(name) = tool.Split(","c).ToList()
                 End If
             End While
         End Using
@@ -104,7 +104,7 @@ Public Class Main
             dots = dots + "."
             statusText.Text = "Waiting for iDevice" + dots
         ElseIf iphone.IsConnected = True Then
-            'The user plugged their devcie back in!
+            'The user plugged their device back in!
             jailbreakButton.Enabled = True
             ProgressBar.Style = ProgressBarStyle.Blocks
             ProgressBar.Value = 100
@@ -173,6 +173,13 @@ Public Class Main
         End If
     End Sub
     Private Sub AutoRadio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoRadio.Click
+        If AutoTimer.Enabled = False Then
+            statusText.Text = "Waiting for iDevice."
+            dots = "."
+            iosText.Text = ""
+            deviceText.Text = ""
+            jailbreakButton.Enabled = False
+        End If
         AutoTimer.Start()
     End Sub
     Private Sub manualButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles manualButton.Click
@@ -186,12 +193,13 @@ Public Class Main
         f.ShowDialog()
         If cancelled = True And ok = False Then
             AutoRadio.PerformClick()
+            jailbreakButton.Enabled = False
+        Else
+            jailbreakButton.Enabled = True
+            iosText.Text = ios
+            deviceText.Text = device
         End If
-        iosText.Text = ios
-        deviceText.Text = device
         modelText.Text = ""
         CarrierText.Text = ""
-        jailbreakButton.Enabled = True
-
     End Sub
 End Class
