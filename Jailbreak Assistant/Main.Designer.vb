@@ -38,7 +38,6 @@ Partial Class Main
         Me.CarrierText = New System.Windows.Forms.Label()
         Me.jailbreakButton = New System.Windows.Forms.Button()
         Me.aboutButton = New System.Windows.Forms.Button()
-        Me.manualTimer = New System.Windows.Forms.Timer(Me.components)
         Me.manualButton = New System.Windows.Forms.Button()
         Me.AutoRadio = New System.Windows.Forms.RadioButton()
         Me.ManualRadio = New System.Windows.Forms.RadioButton()
@@ -265,7 +264,6 @@ Partial Class Main
     Friend WithEvents CarrierText As System.Windows.Forms.Label
     Friend WithEvents jailbreakButton As System.Windows.Forms.Button
     Friend WithEvents aboutButton As System.Windows.Forms.Button
-    Friend WithEvents manualTimer As System.Windows.Forms.Timer
     Friend WithEvents manualButton As System.Windows.Forms.Button
     Friend WithEvents AutoRadio As System.Windows.Forms.RadioButton
     Friend WithEvents ManualRadio As System.Windows.Forms.RadioButton
