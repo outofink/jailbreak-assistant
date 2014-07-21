@@ -34,7 +34,7 @@ def getVersionLine(device):
 final= "<root>\n"
 for device in ordered_devices:
 	final += getVersionLine(device)
-final += "<root>"
+final += "</root>"
 
 ios_file=open("Jailbreak Assistant/ios.xml", "w")
 ios_file.write(final)
