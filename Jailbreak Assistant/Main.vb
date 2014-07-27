@@ -20,12 +20,20 @@ Public Class Main
 
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Move files into temp folder
+        Dim windows_temp, temp As String
+        windows_temp = My.Computer.FileSystem.SpecialDirectories.Temp
+        temp = windows_temp & "\outofink\jailbreak-assistant"
+        System.IO.Directory.CreateDirectory(temp)
+        System.IO.File.WriteAllText(temp & "\devices.xml", My.Resources.devices)
+        System.IO.File.WriteAllText(temp & "\ios.xml", My.Resources.ios)
+        System.IO.File.WriteAllText(temp & "\jailbreak.xml", My.Resources.jailbreak)
         'Start checking for a device...
         AutoTimer.Start()
         jailbreakButton.Enabled = False
         AutoRadio.Checked = True
         Dim device, name, carrier, version As String
-        Using document As XmlReader = New XmlTextReader("devices.xml")
+        Using document As XmlReader = New XmlTextReader(temp & "\devices.xml")
             While (document.Read())
                 document.ReadToFollowing("Type")
 
@@ -45,7 +53,7 @@ Public Class Main
                 End If
             End While
         End Using
-        Using document As XmlReader = New XmlTextReader("ios.xml")
+        Using document As XmlReader = New XmlTextReader(temp & "\ios.xml")
             While (document.Read())
                 document.ReadToFollowing("device")
 
@@ -62,7 +70,7 @@ Public Class Main
                 End If
             End While
         End Using
-        Using document As XmlReader = New XmlTextReader("jailbreak.xml")
+        Using document As XmlReader = New XmlTextReader(temp & "\jailbreak.xml")
             While (document.Read())
                 document.ReadToFollowing("jailbreak")
 

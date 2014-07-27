@@ -36,6 +36,6 @@ for device in ordered_devices:
 	final += getVersionLine(device)
 final += "</root>"
 
-ios_file=open("Jailbreak Assistant/ios.xml", "w")
+ios_file=open("Jailbreak Assistant/Resources/ios.xml", "w")
 ios_file.write(final)
 ios_file.close()

@@ -99,11 +99,12 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;root&gt;
-        '''&lt;device name=&quot;iPhone 2G&quot; version=&quot;3.1.3&quot;/&gt;
-        '''&lt;device name=&quot;iPhone 3G&quot; version=&quot;3.1.3,4.0,4.0.1,4.0.2,4.1,4.2.1&quot;/&gt;
-        '''&lt;device name=&quot;iPhone 3GS&quot; version=&quot;3.1.3,4.0,4.0.1,4.0.2,4.1,4.2.1,4.3,4.3.1,4.3.2,4.3.3,4.3.4,4.3.5,5.0,5.0.1,5.1,5.1.1,6.0,6.0.1,6.1,6.1.2,6.1.3,6.1.6&quot;/&gt;
-        '''&lt;device name=&quot;iPhone 4&quot; version=&quot;4.0,4.0.1,4.0.2,4.1,4.2.1,4.3,4.3.1,4.3.2,4.3.3,4.3.4,4.3.5,5.0,5.0.1,5.1,5.1.1,6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.1,7.0.2,7.0.3,7.0.4,7.0.6&quot;/&gt;
-        '''&lt;device name=&quot;iPhone 4S&quot; version=&quot;5.0,5.0.1,5.1,5.1.1,6. [rest of string was truncated]&quot;;.
+        '''&lt;device name=&quot;iPad 2&quot; version=&quot;6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
+        '''&lt;device name=&quot;iPad 3&quot; version=&quot;6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
+        '''&lt;device name=&quot;iPad 4&quot; version=&quot;6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
+        '''&lt;device name=&quot;iPad Air&quot; version=&quot;7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
+        '''&lt;device name=&quot;iPad Mini&quot; version=&quot;6.0,6.0.1,6.0.2,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
+        '''&lt;dev [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ios() As String
             Get
@@ -118,10 +119,10 @@ Namespace My.Resources
         '''
         '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;6.0,6.0.1,6.1,6.1.2&quot; tool=&quot;evasi0n&quot;/&gt;
         '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;6.1.3&quot; tool=&quot;p0sixspwn&quot;/&gt;
-        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;7.0,7.0.1,7.0.2,7.0.3,7.0.4,7.0.6&quot; tool=&quot;evasi0n7&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;7.0,7.0.2,7.0.3,7.0.4,7.0.6&quot; tool=&quot;evasi0n7&quot;/&gt;
+        '''&lt;jailbreak name=&quot;iPhone 4&quot; version=&quot;7.1,7.1.1,7.1.2&quot; tool=&quot;pangu&quot;/&gt;
         '''
-        '''&lt;jailbreak name=&quot;iPhone 4S&quot; version=&quot;6.0,6.0.1,6.1,6.1.1,6.1.2&quot; tool=&quot;evasi0n&quot;/&gt;
-        '''&lt;jailbreak name=&quot;iPhone 4S&quot; version=&quot;6.1.3 [rest of string was truncated]&quot;;.
+        '''&lt;jailbreak name=&quot;iPhone 4S&quot; version=&quot;6.0,6.0.1,6.1,6.1.1,6.1. [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jailbreak() As String
             Get
@@ -130,12 +131,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
+        '''  Looks up a localized string similar to                      GNU GENERAL PUBLIC LICENSE
+        '''                       Version 3, 29 June 2007
+        '''
+        ''' Copyright (C) 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;
+        ''' Everyone is permitted to copy and distribute verbatim copies
+        ''' of this license document, but changing it is not allowed.
+        '''
+        '''                            Preamble
+        '''
+        '''  The GNU General Public License is a free, copyleft license for
+        '''software and other kinds of works.
+        '''
+        '''  The licenses for most software and other practical works are designed
+        '''t [rest of string was truncated]&quot;;.
         '''</summary>
-        Public ReadOnly Property LICENSE() As Byte()
+        Public ReadOnly Property LICENSE() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("LICENSE", resourceCulture)
-                Return CType(obj,Byte())
+                Return ResourceManager.GetString("LICENSE", resourceCulture)
             End Get
         End Property
     End Module
