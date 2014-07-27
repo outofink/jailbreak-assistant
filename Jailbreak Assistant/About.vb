@@ -31,6 +31,6 @@ Public Class About
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Process.Start("notepad.exe", "LICENSE.md")
+        Process.Start("notepad.exe", "LICENSE.txt")
     End Sub
 End Class
