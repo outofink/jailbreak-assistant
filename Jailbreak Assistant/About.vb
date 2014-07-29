@@ -27,7 +27,7 @@ Public Class About
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles siteButton.Click
-        Process.Start("https://github.com/outofink/jailbreak-assistant")
+        Process.Start("http://outofinksoftware.com")
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles licenseButton.Click
