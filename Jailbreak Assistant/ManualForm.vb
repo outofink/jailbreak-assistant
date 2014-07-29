@@ -8,8 +8,8 @@
     Private Sub ManualForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim numb As Integer
         numb = 0
-        For Each blob In devices
-            deviceCombo.Items.Insert(numb, blob)
+        For Each item In devices
+            deviceCombo.Items.Insert(numb, item)
             numb += 1
         Next
         iosCombo.Enabled = False
@@ -25,8 +25,8 @@
         numb = 0
         iosCombo.Items.Clear()
         listo = manual.Item(deviceCombo.Text)
-        For Each blob In listo
-            iosCombo.Items.Insert(numb, blob)
+        For Each item In listo
+            iosCombo.Items.Insert(numb, item)
             numb += 1
         Next
         iosCombo.Text = ""
