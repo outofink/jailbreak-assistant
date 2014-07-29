@@ -101,6 +101,7 @@ Public Class Main
             End While
         End Using
         Using document As XmlReader = New XmlTextReader(temp & "\jailbreak.xml")
+            Dim version_list As List(Of String)
             While (document.Read())
                 document.ReadToFollowing("jailbreak")
 
@@ -114,8 +115,11 @@ Public Class Main
                 tool = document.Value.ToString
 
                 If name <> "" Then
-                    jailbreak.Add(name + version, New List(Of String))
-                    jailbreak(name) = tool.Split(","c).ToList()
+                    version_list = version.Split(","c).ToList()
+                    For Each versionNo As String In version_list
+                        jailbreak.Add(name + versionNo, tool)
+                    Next
+
                 End If
             End While
         End Using
@@ -150,17 +154,15 @@ Public Class Main
 
             If details.ContainsKey(iphone.DeviceProductType) Then
                 Dim listo As New List(Of String)
-                Dim item As String
                 Try
                     listo = details.Item(iphone.DeviceProductType)
-                    For Each item In listo.GetRange(0, 1)
-                        device = item
-                    Next
-                    For Each item In listo.GetRange(1, 1)
-                        carrier = item
-                    Next
+                    device = listo.Item(0)
+                    carrier = listo.Item(1)
                 Catch ex As Exception
                 End Try
+            Else
+                device = iphone.DeviceProductType
+                carrier = "Unknown"
             End If
             'Display it
             ios = iphone.DeviceVersion
