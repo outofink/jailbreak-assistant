@@ -98,6 +98,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property evasi0n() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("evasi0n", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;root&gt;
         '''&lt;device name=&quot;iPad 2&quot; version=&quot;6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
         '''&lt;device name=&quot;iPad 3&quot; version=&quot;6.0,6.0.1,6.1,6.1.2,6.1.3,7.0,7.0.2,7.0.3,7.0.4,7.0.6,7.1,7.1.1,7.1.2&quot;/&gt;
@@ -149,6 +159,26 @@ Namespace My.Resources
         Public ReadOnly Property LICENSE() As String
             Get
                 Return ResourceManager.GetString("LICENSE", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property p0sixpwn() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("p0sixpwn", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property pangu() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pangu", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module

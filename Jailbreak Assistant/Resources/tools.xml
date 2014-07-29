@@ -1,0 +1,6 @@
+<root>
+<tool name="p0sixspwn" d_name="p0sixspwn" website="http://www.p0sixspwn.com/" description="p0sixspwn is a utility by winocm, iH8sn0w, and SquiffyPwn that provides an untethered jailbreak of iOS 6.1.3 through iOS 6.1.6." icon="p0sixspwn.png"/>
+<tool name="evasi0n7" d_name="evasi0n7" website="http://evasi0n.com" description="evasi0n7 is a utility by the evad3rs that provides an untethered jailbreak of iOS 7.0 through iOS 7.0.6." icon="evasi0n.png"/>
+<tool name="evasi0n" d_name="evasi0n" website="http://evasi0n.com/iOS6/" description="evasi0n is a utility by the evad3rs that provides an untethered jailbreak of iOS 6.0 through iOS 6.1.2." icon="evasi0n.png"/>
+<tool name="pangu" d_name="Pangu" website="http://en.pangu.io/" description="Pangu is a utility by the Chinese Pangu Team that provides an untethered jailbreak of iOS 7.1 through iOS 7.1.2." icon="pangu.png"/>
+</root>

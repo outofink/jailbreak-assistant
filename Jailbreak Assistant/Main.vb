@@ -121,14 +121,14 @@ Public Class Main
 
             If details.ContainsKey(iphone.DeviceProductType) Then
                 Dim listo As New List(Of String)
-                Dim blob As String
+                Dim item As String
                 Try
                     listo = details.Item(iphone.DeviceProductType)
-                    For Each blob In listo.GetRange(0, 1)
-                        device = blob
+                    For Each item In listo.GetRange(0, 1)
+                        device = item
                     Next
-                    For Each blob In listo.GetRange(1, 1)
-                        carrier = blob
+                    For Each item In listo.GetRange(1, 1)
+                        carrier = item
                     Next
                 Catch ex As Exception
                 End Try
@@ -143,10 +143,10 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub recoveryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles recoveryButton.Click
-        'Recovery mode stuff...
-        'Form2.Show()
-    End Sub
+    'Private Sub recoveryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    'Recovery mode stuff...
+    'Form2.Show()
+    'End Sub
 
     Private Sub aboutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aboutButton.Click
         'Credits!
@@ -172,6 +172,8 @@ Public Class Main
         'frm.Controls.Add(btn)
 
         'frm.Show()
+        Dim f As New Tools
+        f.ShowDialog()
 
     End Sub
 
@@ -210,4 +212,6 @@ Public Class Main
         modelText.Text = ""
         CarrierText.Text = ""
     End Sub
+
+
 End Class

@@ -29,7 +29,6 @@ Partial Class Main
         Me.iosText = New System.Windows.Forms.Label()
         Me.AutoTimer = New System.Windows.Forms.Timer(Me.components)
         Me.ProgressBar = New System.Windows.Forms.ProgressBar()
-        Me.recoveryButton = New System.Windows.Forms.Button()
         Me.modelText = New System.Windows.Forms.Label()
         Me.iosStatic = New System.Windows.Forms.Label()
         Me.deviceStatic = New System.Windows.Forms.Label()
@@ -82,21 +81,11 @@ Partial Class Main
         '
         'ProgressBar
         '
-        Me.ProgressBar.Location = New System.Drawing.Point(11, 176)
+        Me.ProgressBar.Location = New System.Drawing.Point(15, 178)
         Me.ProgressBar.Name = "ProgressBar"
-        Me.ProgressBar.Size = New System.Drawing.Size(455, 20)
+        Me.ProgressBar.Size = New System.Drawing.Size(451, 20)
         Me.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ProgressBar.TabIndex = 6
-        '
-        'recoveryButton
-        '
-        Me.recoveryButton.Enabled = False
-        Me.recoveryButton.Location = New System.Drawing.Point(352, 108)
-        Me.recoveryButton.Name = "recoveryButton"
-        Me.recoveryButton.Size = New System.Drawing.Size(114, 31)
-        Me.recoveryButton.TabIndex = 7
-        Me.recoveryButton.Text = "Recovery Assistant"
-        Me.recoveryButton.UseVisualStyleBackColor = True
         '
         'modelText
         '
@@ -162,16 +151,16 @@ Partial Class Main
         Me.jailbreakButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jailbreakButton.Location = New System.Drawing.Point(274, 12)
         Me.jailbreakButton.Name = "jailbreakButton"
-        Me.jailbreakButton.Size = New System.Drawing.Size(192, 90)
+        Me.jailbreakButton.Size = New System.Drawing.Size(192, 91)
         Me.jailbreakButton.TabIndex = 14
         Me.jailbreakButton.Text = "Help me Jailbreak!"
         Me.jailbreakButton.UseVisualStyleBackColor = True
         '
         'aboutButton
         '
-        Me.aboutButton.Location = New System.Drawing.Point(352, 143)
+        Me.aboutButton.Location = New System.Drawing.Point(352, 109)
         Me.aboutButton.Name = "aboutButton"
-        Me.aboutButton.Size = New System.Drawing.Size(114, 29)
+        Me.aboutButton.Size = New System.Drawing.Size(114, 63)
         Me.aboutButton.TabIndex = 15
         Me.aboutButton.Text = "About"
         Me.aboutButton.UseVisualStyleBackColor = True
@@ -223,7 +212,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(478, 209)
+        Me.ClientSize = New System.Drawing.Size(478, 207)
         Me.Controls.Add(Me.aboutButton)
         Me.Controls.Add(Me.jailbreakButton)
         Me.Controls.Add(Me.CarrierText)
@@ -232,7 +221,6 @@ Partial Class Main
         Me.Controls.Add(Me.deviceStatic)
         Me.Controls.Add(Me.iosStatic)
         Me.Controls.Add(Me.modelText)
-        Me.Controls.Add(Me.recoveryButton)
         Me.Controls.Add(Me.ProgressBar)
         Me.Controls.Add(Me.iosText)
         Me.Controls.Add(Me.deviceText)
@@ -255,7 +243,6 @@ Partial Class Main
     Friend WithEvents iosText As System.Windows.Forms.Label
     Friend WithEvents AutoTimer As System.Windows.Forms.Timer
     Friend WithEvents ProgressBar As System.Windows.Forms.ProgressBar
-    Friend WithEvents recoveryButton As System.Windows.Forms.Button
     Friend WithEvents modelText As System.Windows.Forms.Label
     Friend WithEvents iosStatic As System.Windows.Forms.Label
     Friend WithEvents deviceStatic As System.Windows.Forms.Label
