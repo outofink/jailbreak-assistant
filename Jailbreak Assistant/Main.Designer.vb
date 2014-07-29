@@ -158,6 +158,7 @@ Partial Class Main
         '
         'aboutButton
         '
+        Me.aboutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.aboutButton.Location = New System.Drawing.Point(352, 109)
         Me.aboutButton.Name = "aboutButton"
         Me.aboutButton.Size = New System.Drawing.Size(114, 63)
