@@ -2,7 +2,7 @@
 Imports System.Xml
 Module PublicMod
     Public iphone As New MobileDevice.iPhone
-    Public dots, mode, device, carrier, ios, model, tool As String
+    Public dots, mode, device, carrier, ios, model, tool, chosentool As String
     Public document As XmlReader
     Public details, manual, utility As New Dictionary(Of String, List(Of String))
     Public jailbreak As New Dictionary(Of String, String)

@@ -63,7 +63,6 @@ Public Class Main
 
                 document.MoveToAttribute("version")
                 version = document.Value.ToString
-                'MsgBox(version)
                 If name <> "" Then
                     manual.Add(name, New List(Of String))
                     manual(name) = version.Split(","c).ToList()
@@ -119,7 +118,6 @@ Public Class Main
                     For Each versionNo As String In version_list
                         jailbreak.Add(name + versionNo, tool)
                     Next
-
                 End If
             End While
         End Using
@@ -188,23 +186,18 @@ Public Class Main
     End Sub
 
     Private Sub jailbreakButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles jailbreakButton.Click
-        'User wants to know how to jailbreak!
-        'Dim frm As New Form
-        'frm.Size = New Size(300, 200)
-        'frm.Text = "New Form"
+        Dim deviceplusversion As String
+        deviceplusversion = device + ios
+        If jailbreak.ContainsKey(deviceplusversion) Then
+            chosentool = jailbreak.Item(deviceplusversion)
+            Dim f As New Tools
+            f.ShowDialog()
+        ElseIf (Not ios.ToString.StartsWith("6")) Or (Not ios.ToString.StartsWith("7")) Then
+            MsgBox("Jailbreak Assistant doesn't support jailbreak utilities for before iOS 6 yet.")
+        Else
+            MsgBox("There is no jailbreak tool available for your iDevice yet.")
+        End If
 
-        'Dim btn As New Button
-        'btn.Text = "Click Me"
-        'btn.Size = New Size(100, 30)
-        'btn.Location = New Point( _
-        '    (frm.ClientSize.Width - btn.Width) / 2, _
-        '    (frm.ClientSize.Height - btn.Height) / 2)
-        ''AddHandler btn.Click, AddressOf btn_Click
-        'frm.Controls.Add(btn)
-
-        'frm.Show()
-        Dim f As New Tools
-        f.ShowDialog()
 
     End Sub
 

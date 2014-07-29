@@ -116,7 +116,7 @@ Partial Class About
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Version 1.0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label3.Text = "Version 0.1"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'About

@@ -34,11 +34,10 @@ Partial Class Tools
         '
         'toolIcon
         '
-        Me.toolIcon.Image = Global.Jailbreak_Assistant.My.Resources.Resources.pangu
         Me.toolIcon.Location = New System.Drawing.Point(12, 74)
         Me.toolIcon.Name = "toolIcon"
         Me.toolIcon.Size = New System.Drawing.Size(64, 64)
-        Me.toolIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.toolIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.toolIcon.TabIndex = 0
         Me.toolIcon.TabStop = False
         '
@@ -61,8 +60,6 @@ Partial Class Tools
         Me.descriptionText.Name = "descriptionText"
         Me.descriptionText.Size = New System.Drawing.Size(370, 64)
         Me.descriptionText.TabIndex = 2
-        Me.descriptionText.Text = "Pangu is a utility by the Chinese Pangu Team that provides an untethered jailbrea" & _
-    "k of iOS 7.1 through iOS 7.1.2."
         Me.descriptionText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'closeButton
@@ -76,11 +73,11 @@ Partial Class Tools
         '
         'siteButton
         '
-        Me.siteButton.Location = New System.Drawing.Point(166, 196)
+        Me.siteButton.Location = New System.Drawing.Point(149, 196)
         Me.siteButton.Name = "siteButton"
-        Me.siteButton.Size = New System.Drawing.Size(130, 23)
+        Me.siteButton.Size = New System.Drawing.Size(163, 23)
         Me.siteButton.TabIndex = 1
-        Me.siteButton.Text = "Goto Pangu's website"
+        Me.siteButton.Text = "Go to 's website"
         Me.siteButton.UseVisualStyleBackColor = True
         '
         'leadText
@@ -100,7 +97,6 @@ Partial Class Tools
         Me.nameText.Name = "nameText"
         Me.nameText.Size = New System.Drawing.Size(443, 37)
         Me.nameText.TabIndex = 6
-        Me.nameText.Text = "Pangu"
         Me.nameText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Tools
@@ -123,7 +119,6 @@ Partial Class Tools
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Pangu"
         CType(Me.toolIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
