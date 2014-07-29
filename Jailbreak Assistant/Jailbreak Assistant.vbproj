@@ -217,6 +217,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Black_Lock.ico" />
+    <None Include="Resources\tools.xml" />
     <None Include="Resources\icons\pangu.png" />
     <None Include="Resources\icons\p0sixpwn.png" />
     <None Include="Resources\icons\evasi0n.png" />

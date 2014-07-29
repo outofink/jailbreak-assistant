@@ -28,6 +28,7 @@ Public Class Main
         System.IO.File.WriteAllText(temp & "\devices.xml", My.Resources.devices)
         System.IO.File.WriteAllText(temp & "\ios.xml", My.Resources.ios)
         System.IO.File.WriteAllText(temp & "\jailbreak.xml", My.Resources.jailbreak)
+        System.IO.File.WriteAllText(temp & "\tools.xml", My.Resources.tools)
         'Start checking for a device...
         AutoTimer.Start()
         jailbreakButton.Enabled = False
@@ -70,6 +71,35 @@ Public Class Main
                 End If
             End While
         End Using
+        Using document As XmlReader = New XmlTextReader(temp & "\tools.xml")
+            Dim d_name, description, website, tool_icon As String
+            While (document.Read())
+                document.ReadToFollowing("tool")
+
+                document.MoveToAttribute("name")
+                name = document.Value.ToString
+
+                document.MoveToAttribute("d_name")
+                d_name = document.Value.ToString
+
+                document.MoveToAttribute("description")
+                description = document.Value.ToString
+
+                document.MoveToAttribute("website")
+                website = document.Value.ToString
+
+                document.MoveToAttribute("icon")
+                tool_icon = document.Value.ToString
+
+                If name <> "" Then
+                    utility.Add(name, New List(Of String))
+                    utility(name).Add(d_name)
+                    utility(name).Add(description)
+                    utility(name).Add(website)
+                    utility(name).Add(tool_icon)
+                End If
+            End While
+        End Using
         Using document As XmlReader = New XmlTextReader(temp & "\jailbreak.xml")
             While (document.Read())
                 document.ReadToFollowing("jailbreak")
@@ -89,7 +119,6 @@ Public Class Main
                 End If
             End While
         End Using
-
     End Sub
 
     Private Sub AutoTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoTimer.Tick

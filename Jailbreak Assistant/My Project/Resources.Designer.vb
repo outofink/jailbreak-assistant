@@ -181,5 +181,17 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;root&gt;
+        '''&lt;tool name=&quot;p0sixspwn&quot; d_name=&quot;p0sixspwn&quot; website=&quot;http://www.p0sixspwn.com/&quot; description=&quot;p0sixspwn is a utility by winocm, iH8sn0w, and SquiffyPwn that provides an untethered jailbreak of iOS 6.1.3 through iOS 6.1.6.&quot; icon=&quot;p0sixspwn.png&quot;/&gt;
+        '''&lt;tool name=&quot;evasi0n7&quot; d_name=&quot;evasi0n7&quot; website=&quot;http://evasi0n.com&quot; description=&quot;evasi0n7 is a utility by the evad3rs that provides an untethered jailbreak of iOS 7.0 through iOS 7.0.6.&quot; icon=&quot;evasi0n.png&quot;/&gt;
+        '''&lt;tool name=&quot;evasi0n&quot; d_name=&quot;evasi0n&quot; website=&quot;htt [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property tools() As String
+            Get
+                Return ResourceManager.GetString("tools", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
