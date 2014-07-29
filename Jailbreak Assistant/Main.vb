@@ -17,10 +17,18 @@ Imports System.Xml
 '    along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 Public Class Main
-
-
+    Public iphone
+    Public Sub init()
+        Try
+            iphone = New MobileDevice.iPhone
+        Catch ex As Exception
+            MsgBox("This program requires iTunes to be installed in order to run.")
+            Me.Close()
+        End Try
+    End Sub
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Move files into temp folder
+        init()
         Dim windows_temp, temp As String
         windows_temp = My.Computer.FileSystem.SpecialDirectories.Temp
         temp = windows_temp & "\outofink\jailbreak-assistant"
