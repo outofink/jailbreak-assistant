@@ -152,7 +152,7 @@ Partial Class Main
         Me.jailbreakButton.Location = New System.Drawing.Point(274, 12)
         Me.jailbreakButton.Name = "jailbreakButton"
         Me.jailbreakButton.Size = New System.Drawing.Size(192, 91)
-        Me.jailbreakButton.TabIndex = 14
+        Me.jailbreakButton.TabIndex = 1
         Me.jailbreakButton.Text = "Help me Jailbreak!"
         Me.jailbreakButton.UseVisualStyleBackColor = True
         '
@@ -161,7 +161,7 @@ Partial Class Main
         Me.aboutButton.Location = New System.Drawing.Point(352, 109)
         Me.aboutButton.Name = "aboutButton"
         Me.aboutButton.Size = New System.Drawing.Size(114, 63)
-        Me.aboutButton.TabIndex = 15
+        Me.aboutButton.TabIndex = 5
         Me.aboutButton.Text = "About"
         Me.aboutButton.UseVisualStyleBackColor = True
         '
@@ -170,7 +170,7 @@ Partial Class Main
         Me.manualButton.Location = New System.Drawing.Point(5, 36)
         Me.manualButton.Name = "manualButton"
         Me.manualButton.Size = New System.Drawing.Size(145, 23)
-        Me.manualButton.TabIndex = 19
+        Me.manualButton.TabIndex = 4
         Me.manualButton.Text = "Manually choose device"
         Me.manualButton.UseVisualStyleBackColor = True
         '
@@ -180,7 +180,7 @@ Partial Class Main
         Me.AutoRadio.Location = New System.Drawing.Point(6, 13)
         Me.AutoRadio.Name = "AutoRadio"
         Me.AutoRadio.Size = New System.Drawing.Size(72, 17)
-        Me.AutoRadio.TabIndex = 20
+        Me.AutoRadio.TabIndex = 2
         Me.AutoRadio.TabStop = True
         Me.AutoRadio.Text = "Automatic"
         Me.AutoRadio.UseVisualStyleBackColor = True
@@ -191,7 +191,7 @@ Partial Class Main
         Me.ManualRadio.Location = New System.Drawing.Point(84, 13)
         Me.ManualRadio.Name = "ManualRadio"
         Me.ManualRadio.Size = New System.Drawing.Size(60, 17)
-        Me.ManualRadio.TabIndex = 21
+        Me.ManualRadio.TabIndex = 3
         Me.ManualRadio.TabStop = True
         Me.ManualRadio.Text = "Manual"
         Me.ManualRadio.UseVisualStyleBackColor = True

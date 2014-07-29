@@ -66,14 +66,14 @@ Partial Class ManualForm
         Me.deviceCombo.Location = New System.Drawing.Point(73, 12)
         Me.deviceCombo.Name = "deviceCombo"
         Me.deviceCombo.Size = New System.Drawing.Size(121, 21)
-        Me.deviceCombo.TabIndex = 3
+        Me.deviceCombo.TabIndex = 1
         '
         'useManual
         '
         Me.useManual.Location = New System.Drawing.Point(15, 81)
         Me.useManual.Name = "useManual"
         Me.useManual.Size = New System.Drawing.Size(102, 23)
-        Me.useManual.TabIndex = 4
+        Me.useManual.TabIndex = 3
         Me.useManual.Text = "Use this iDevice"
         Me.useManual.UseVisualStyleBackColor = True
         '
@@ -82,7 +82,7 @@ Partial Class ManualForm
         Me.cancelManual.Location = New System.Drawing.Point(123, 81)
         Me.cancelManual.Name = "cancelManual"
         Me.cancelManual.Size = New System.Drawing.Size(71, 23)
-        Me.cancelManual.TabIndex = 5
+        Me.cancelManual.TabIndex = 4
         Me.cancelManual.Text = "Cancel"
         Me.cancelManual.UseVisualStyleBackColor = True
         '

@@ -65,7 +65,7 @@ Partial Class About
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(229, 13)
-        Me.LinkLabel1.TabIndex = 2
+        Me.LinkLabel1.TabIndex = 1
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "https://github.com/outofink/jailbreak-assistant."
         Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -75,7 +75,7 @@ Partial Class About
         Me.Button1.Location = New System.Drawing.Point(227, 289)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
+        Me.Button1.TabIndex = 4
         Me.Button1.Text = "Close"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -84,7 +84,7 @@ Partial Class About
         Me.Button2.Location = New System.Drawing.Point(12, 289)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 4
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "Website"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -103,7 +103,7 @@ Partial Class About
         Me.Button3.Location = New System.Drawing.Point(118, 289)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 6
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "License"
         Me.Button3.UseVisualStyleBackColor = True
         '

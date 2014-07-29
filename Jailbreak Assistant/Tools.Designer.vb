@@ -70,7 +70,7 @@ Partial Class Tools
         Me.closeButton.Location = New System.Drawing.Point(377, 196)
         Me.closeButton.Name = "closeButton"
         Me.closeButton.Size = New System.Drawing.Size(75, 23)
-        Me.closeButton.TabIndex = 3
+        Me.closeButton.TabIndex = 2
         Me.closeButton.Text = "Close"
         Me.closeButton.UseVisualStyleBackColor = True
         '
@@ -79,7 +79,7 @@ Partial Class Tools
         Me.siteButton.Location = New System.Drawing.Point(166, 196)
         Me.siteButton.Name = "siteButton"
         Me.siteButton.Size = New System.Drawing.Size(130, 23)
-        Me.siteButton.TabIndex = 4
+        Me.siteButton.TabIndex = 1
         Me.siteButton.Text = "Goto Pangu's website"
         Me.siteButton.UseVisualStyleBackColor = True
         '
