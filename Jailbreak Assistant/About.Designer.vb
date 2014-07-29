@@ -25,11 +25,11 @@ Partial Class About
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.githubLink = New System.Windows.Forms.LinkLabel()
+        Me.closeButton = New System.Windows.Forms.Button()
+        Me.siteButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.licenseButton = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,35 +58,35 @@ Partial Class About
     "ng missing, report at " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " MobileDevice.dll for VB by Fallensn0w." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LinkLabel1
+        'githubLink
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(36, 229)
-        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(229, 13)
-        Me.LinkLabel1.TabIndex = 1
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "https://github.com/outofink/jailbreak-assistant."
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.githubLink.AutoSize = True
+        Me.githubLink.Location = New System.Drawing.Point(36, 229)
+        Me.githubLink.Margin = New System.Windows.Forms.Padding(0)
+        Me.githubLink.Name = "githubLink"
+        Me.githubLink.Size = New System.Drawing.Size(229, 13)
+        Me.githubLink.TabIndex = 1
+        Me.githubLink.TabStop = True
+        Me.githubLink.Text = "https://github.com/outofink/jailbreak-assistant."
+        Me.githubLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'closeButton
         '
-        Me.Button1.Location = New System.Drawing.Point(227, 289)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Close"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.closeButton.Location = New System.Drawing.Point(227, 289)
+        Me.closeButton.Name = "closeButton"
+        Me.closeButton.Size = New System.Drawing.Size(75, 23)
+        Me.closeButton.TabIndex = 4
+        Me.closeButton.Text = "Close"
+        Me.closeButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'siteButton
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 289)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Website"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.siteButton.Location = New System.Drawing.Point(12, 289)
+        Me.siteButton.Name = "siteButton"
+        Me.siteButton.Size = New System.Drawing.Size(75, 23)
+        Me.siteButton.TabIndex = 2
+        Me.siteButton.Text = "Website"
+        Me.siteButton.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -98,14 +98,14 @@ Partial Class About
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Jailbreak Assistant"
         '
-        'Button3
+        'licenseButton
         '
-        Me.Button3.Location = New System.Drawing.Point(118, 289)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "License"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.licenseButton.Location = New System.Drawing.Point(118, 289)
+        Me.licenseButton.Name = "licenseButton"
+        Me.licenseButton.Size = New System.Drawing.Size(75, 23)
+        Me.licenseButton.TabIndex = 3
+        Me.licenseButton.Text = "License"
+        Me.licenseButton.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -126,11 +126,11 @@ Partial Class About
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.ClientSize = New System.Drawing.Size(314, 324)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.licenseButton)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.siteButton)
+        Me.Controls.Add(Me.closeButton)
+        Me.Controls.Add(Me.githubLink)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -147,11 +147,11 @@ Partial Class About
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents githubLink As System.Windows.Forms.LinkLabel
+    Friend WithEvents closeButton As System.Windows.Forms.Button
+    Friend WithEvents siteButton As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents licenseButton As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class
