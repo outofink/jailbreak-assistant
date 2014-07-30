@@ -16,3 +16,4 @@ Supports iOS 6+.
 ## Requirements
 
 - [.NET Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=17851)
+- [iTunes](https://www.apple.com/itunes/)
