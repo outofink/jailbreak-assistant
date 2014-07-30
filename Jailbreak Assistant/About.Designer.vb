@@ -110,13 +110,12 @@ Partial Class About
         'Label3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(124, 181)
+        Me.Label3.Location = New System.Drawing.Point(12, 181)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.Size = New System.Drawing.Size(290, 13)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Version 0.1"
+        Me.Label3.Text = "Version 0.1-alpha"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'About
