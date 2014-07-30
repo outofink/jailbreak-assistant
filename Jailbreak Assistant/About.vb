@@ -33,4 +33,8 @@ Public Class About
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles licenseButton.Click
         Process.Start("notepad.exe", "LICENSE.txt")
     End Sub
+
+    Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        versionLabel.Text = "Version " + program_version
+    End Sub
 End Class

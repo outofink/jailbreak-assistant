@@ -9,4 +9,5 @@ Module PublicMod
     Public devices As New List(Of String)
     Public listo As List(Of String)
     Public cancelled, ok As Boolean
+    Public program_version As String = "0.1-alpha"
 End Module
