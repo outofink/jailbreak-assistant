@@ -35,6 +35,6 @@ Public Class About
     End Sub
 
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        versionLabel.Text = "Version " + program_version
+        versionLabel.Text = "v" + program_version
     End Sub
 End Class

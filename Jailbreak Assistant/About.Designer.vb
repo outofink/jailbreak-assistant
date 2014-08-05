@@ -115,7 +115,7 @@ Partial Class About
         Me.versionLabel.Name = "versionLabel"
         Me.versionLabel.Size = New System.Drawing.Size(290, 13)
         Me.versionLabel.TabIndex = 7
-        Me.versionLabel.Text = "Version 0.1-alpha"
+        Me.versionLabel.Text = "v"
         Me.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'About
