@@ -41,6 +41,7 @@ Partial Class Main
         Me.AutoRadio = New System.Windows.Forms.RadioButton()
         Me.ManualRadio = New System.Windows.Forms.RadioButton()
         Me.optionsBox = New System.Windows.Forms.GroupBox()
+        Me.cfu_Background = New System.ComponentModel.BackgroundWorker()
         Me.optionsBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class Main
         Me.statusText.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.statusText.AutoSize = True
         Me.statusText.Font = New System.Drawing.Font("Tahoma", 8.0!)
-        Me.statusText.Location = New System.Drawing.Point(12, 159)
+        Me.statusText.Location = New System.Drawing.Point(15, 159)
         Me.statusText.Name = "statusText"
         Me.statusText.Size = New System.Drawing.Size(97, 13)
         Me.statusText.TabIndex = 0
@@ -83,7 +84,7 @@ Partial Class Main
         '
         Me.ProgressBar.Location = New System.Drawing.Point(15, 178)
         Me.ProgressBar.Name = "ProgressBar"
-        Me.ProgressBar.Size = New System.Drawing.Size(451, 20)
+        Me.ProgressBar.Size = New System.Drawing.Size(457, 20)
         Me.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ProgressBar.TabIndex = 6
         '
@@ -151,7 +152,7 @@ Partial Class Main
         Me.jailbreakButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jailbreakButton.Location = New System.Drawing.Point(274, 12)
         Me.jailbreakButton.Name = "jailbreakButton"
-        Me.jailbreakButton.Size = New System.Drawing.Size(192, 91)
+        Me.jailbreakButton.Size = New System.Drawing.Size(198, 91)
         Me.jailbreakButton.TabIndex = 1
         Me.jailbreakButton.Text = "Help me Jailbreak!"
         Me.jailbreakButton.UseVisualStyleBackColor = True
@@ -161,7 +162,7 @@ Partial Class Main
         Me.aboutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.aboutButton.Location = New System.Drawing.Point(352, 109)
         Me.aboutButton.Name = "aboutButton"
-        Me.aboutButton.Size = New System.Drawing.Size(114, 63)
+        Me.aboutButton.Size = New System.Drawing.Size(120, 63)
         Me.aboutButton.TabIndex = 5
         Me.aboutButton.Text = "About"
         Me.aboutButton.UseVisualStyleBackColor = True
@@ -213,7 +214,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(478, 207)
+        Me.ClientSize = New System.Drawing.Size(484, 207)
         Me.Controls.Add(Me.aboutButton)
         Me.Controls.Add(Me.jailbreakButton)
         Me.Controls.Add(Me.CarrierText)
@@ -256,5 +257,6 @@ Partial Class Main
     Friend WithEvents AutoRadio As System.Windows.Forms.RadioButton
     Friend WithEvents ManualRadio As System.Windows.Forms.RadioButton
     Friend WithEvents optionsBox As System.Windows.Forms.GroupBox
+    Friend WithEvents cfu_Background As System.ComponentModel.BackgroundWorker
 
 End Class

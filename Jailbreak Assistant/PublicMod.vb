@@ -6,6 +6,7 @@ Module PublicMod
     Public document As XmlReader
     Public details, manual, utility As New Dictionary(Of String, List(Of String))
     Public jailbreak As New Dictionary(Of String, String)
+    Public updateA, updateB As New Dictionary(Of String, Double)
     Public devices As New List(Of String)
     Public listo As List(Of String)
     Public cancelled, ok As Boolean

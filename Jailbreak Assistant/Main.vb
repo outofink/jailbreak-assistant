@@ -17,6 +17,79 @@ Imports System.Xml
 '    along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 Public Class Main
+    Private Sub cfu_Background_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cfu_Background.RunWorkerCompleted
+        Dim windows_temp, temp As String
+        windows_temp = My.Computer.FileSystem.SpecialDirectories.Temp
+        temp = windows_temp & "\outofink\jailbreak-assistant"
+
+        manualButton.Enabled = True
+        ManualRadio.Enabled = True
+        AutoRadio.Enabled = True
+        optionsBox.Enabled = True
+        AutoTimer.Start()
+
+        loadXMLs(temp)
+        statusText.Text = "Updated."
+    End Sub
+    Private Sub cfu_Background_DoWork(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cfu_Background.DoWork
+        Dim windows_temp, temp As String
+        Dim name, time As String
+        windows_temp = My.Computer.FileSystem.SpecialDirectories.Temp
+        temp = windows_temp & "\outofink\jailbreak-assistant"
+
+        Using document As XmlReader = New XmlTextReader(temp & "\update.xml")
+            While (document.Read())
+                document.ReadToFollowing("file")
+
+                document.MoveToAttribute("name")
+                name = document.Value.ToString
+
+                document.MoveToAttribute("time")
+                time = document.Value.ToString
+
+                If name <> "" Then
+                    updateA.Add(name, time)
+                End If
+            End While
+        End Using
+        Dim fail, reload As Boolean
+        fail = False
+        reload = False
+        Dim wc As New System.Net.WebClient()
+        Dim update_text As String
+        Try
+            update_text = wc.DownloadString("http://ja.outofinksoftware.com/update.xml")
+            System.IO.File.WriteAllText(temp & "\update.xml", update_text)
+            'MsgBox(update_text)
+        Catch
+            fail = True
+        End Try
+        If Not fail Then
+            Using document As XmlReader = New XmlTextReader(temp & "\update.xml")
+                While (document.Read())
+                    document.ReadToFollowing("file")
+
+                    document.MoveToAttribute("name")
+                    name = document.Value.ToString
+
+                    document.MoveToAttribute("time")
+                    time = document.Value.ToString
+
+                    If name <> "" Then
+                        updateB.Add(name, time)
+                    End If
+                End While
+            End Using
+            For Each xml_file In updateB
+                If xml_file.Value - updateA.Item(xml_file.Key) > 0 Then
+                    ' MsgBox("need to update a file!")
+                    update_text = wc.DownloadString("http://ja.outofinksoftware.com/" & xml_file.Key)
+                    System.IO.File.WriteAllText(temp & "/" & xml_file.Key, update_text)
+                    'MsgBox(update_text)
+                End If
+            Next
+        End If
+    End Sub
     Public iphone
     Public Sub init()
         Try
@@ -29,20 +102,34 @@ Public Class Main
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Text = "Jailbreak Assistant " + program_version
         init()
-        'Move files into temp folder
         Dim windows_temp, temp As String
+        'Move files into temp folder
         windows_temp = My.Computer.FileSystem.SpecialDirectories.Temp
         temp = windows_temp & "\outofink\jailbreak-assistant"
+        'Dim now As Double
+        'now = Format(Date.Now(), "yyMMddHHmmss")
         System.IO.Directory.CreateDirectory(temp)
+        'If Not System.IO.File.Exists(temp & "\devices.xml") Then
         System.IO.File.WriteAllText(temp & "\devices.xml", My.Resources.devices)
         System.IO.File.WriteAllText(temp & "\ios.xml", My.Resources.ios)
         System.IO.File.WriteAllText(temp & "\jailbreak.xml", My.Resources.jailbreak)
         System.IO.File.WriteAllText(temp & "\tools.xml", My.Resources.tools)
-        'Start checking for a device...
-        AutoTimer.Start()
+        System.IO.File.WriteAllText(temp & "\update.xml", My.Resources.update)
+        'End If
+        manualButton.Enabled = False
+        ManualRadio.Enabled = False
+        AutoRadio.Enabled = False
+        optionsBox.Enabled = False
         jailbreakButton.Enabled = False
         AutoRadio.Checked = True
+        statusText.Text = "Checking for Updates..."
+
+        Me.cfu_Background.RunWorkerAsync()
+        'Start checking for a device...
+    End Sub
+    Private Sub loadXMLs(temp As String)
         Dim device, name, carrier, version As String
+
         Using document As XmlReader = New XmlTextReader(temp & "\devices.xml")
             While (document.Read())
                 document.ReadToFollowing("Type")
@@ -131,7 +218,6 @@ Public Class Main
             End While
         End Using
     End Sub
-
     Private Sub AutoTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AutoTimer.Tick
         If iphone.IsConnected = False Then
             'The user unplugged their device, wait for them to plug it back in
@@ -201,10 +287,8 @@ Public Class Main
             chosentool = jailbreak.Item(deviceplusversion)
             Dim f As New Tools
             f.ShowDialog()
-        ElseIf (Not ios.ToString.StartsWith("6")) Or (Not ios.ToString.StartsWith("7")) Then
-            MsgBox("Jailbreak Assistant doesn't support jailbreak utilities for before iOS 6 yet.")
         Else
-            MsgBox("There is no jailbreak tool available for your iDevice yet.")
+            MsgBox("Either there is no jailbreak tool available for your iDevice yet, or Jailbreak Assistant doesn't support it yet.")
         End If
 
 
