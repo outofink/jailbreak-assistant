@@ -100,7 +100,7 @@ Public Class Main
         End Try
     End Sub
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Text = "Jailbreak Assistant " + program_version
+        Me.Text = "Jailbreak Assistant v" + program_version
         init()
         Dim windows_temp, temp As String
         'Move files into temp folder
