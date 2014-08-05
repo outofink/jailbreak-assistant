@@ -109,13 +109,13 @@ Public Class Main
         'Dim now As Double
         'now = Format(Date.Now(), "yyMMddHHmmss")
         System.IO.Directory.CreateDirectory(temp)
-        'If Not System.IO.File.Exists(temp & "\devices.xml") Then
-        System.IO.File.WriteAllText(temp & "\devices.xml", My.Resources.devices)
-        System.IO.File.WriteAllText(temp & "\ios.xml", My.Resources.ios)
-        System.IO.File.WriteAllText(temp & "\jailbreak.xml", My.Resources.jailbreak)
-        System.IO.File.WriteAllText(temp & "\tools.xml", My.Resources.tools)
-        System.IO.File.WriteAllText(temp & "\update.xml", My.Resources.update)
-        'End If
+        If Not System.IO.File.Exists(temp & "\devices.xml") Then
+            System.IO.File.WriteAllText(temp & "\devices.xml", My.Resources.devices)
+            System.IO.File.WriteAllText(temp & "\ios.xml", My.Resources.ios)
+            System.IO.File.WriteAllText(temp & "\jailbreak.xml", My.Resources.jailbreak)
+            System.IO.File.WriteAllText(temp & "\tools.xml", My.Resources.tools)
+            System.IO.File.WriteAllText(temp & "\update.xml", My.Resources.update)
+        End If
         manualButton.Enabled = False
         ManualRadio.Enabled = False
         AutoRadio.Enabled = False
