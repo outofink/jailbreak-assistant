@@ -20,6 +20,9 @@
 <Type device="iPhone6,1" name="iPhone 5S" carrier="GSM"/>
 <Type device="iPhone6,2" name="iPhone 5S" carrier="Global"/>
 
+<Type device="iPhone7,1" name="iPhone 6+" carrier="Global"/>
+<Type device="iPhone7,2" name="iPhone 6" carrier="Global"/>
+
 <Type device="iPod1,1" name="iPod Touch 1G" carrier="WiFi"/>
 
 <Type device="iPod2,1" name="iPod Touch 2G" carrier="WiFi"/>
@@ -30,7 +33,7 @@
 
 <Type device="iPod5,1" name="iPod Touch 5G" carrier="WiFi"/>
 
-<Type device="iPad1,1" name="iPad" carrier="WiFi of 3G"/>
+<Type device="iPad1,1" name="iPad" carrier="Wifi/3G"/>
 
 <Type device="iPad2,1" name="iPad 2" carrier="WiFi"/>
 <Type device="iPad2,2" name="iPad 2" carrier="GSM"/>

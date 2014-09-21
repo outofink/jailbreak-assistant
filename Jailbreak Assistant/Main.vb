@@ -288,7 +288,7 @@ Public Class Main
             Dim f As New Tools
             f.ShowDialog()
         Else
-            MsgBox("Either there is no jailbreak tool available for your iDevice yet, or Jailbreak Assistant doesn't support it yet.")
+            MsgBox("Either there is no jailbreak tool available for your iDevice, or Jailbreak Assistant doesn't support it yet.")
         End If
 
 

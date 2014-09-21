@@ -16,6 +16,8 @@ devices = {
 "iPhone5,1":"iPhone 5",
 "iPhone5,3":"iPhone 5C",
 "iPhone6,1":"iPhone 5S",
+"iPhone7,1":"iPhone 6+",
+"iPhone7,2":"iPhone 6",
 "iPod4,1":"iPod Touch 4G",
 "iPod5,1":"iPod Touch 5G"
 }
