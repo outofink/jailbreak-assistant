@@ -1,7 +1,15 @@
+###
+# iosgetter.py
+#
+# a python script that uses Just a Penguin's iOS firmware API
+# to constuct a .xml of all the latest firmwares for iOS devices
+#
+###
+
 import urllib2, json, collections
-json_url="http://api.ios.icj.me/firmwares.json/condensed"
-raw_json = urllib2.urlopen(urllib2.Request(json_url)).read()
-decoded = json.loads(raw_json)
+firmware_url="http://api.ios.icj.me/firmwares.json/condensed"
+raw_json = urllib2.urlopen(urllib2.Request(firmware_url)).read()
+decoded_json = json.loads(raw_json)
 
 devices = { 
 "iPad2,1":"iPad 2",
@@ -25,19 +33,19 @@ devices = {
 ordered_devices = collections.OrderedDict(sorted(devices.items(), key=lambda t: t[1]))
 
 def getVersionLine(device):
-	single = []
-	for numb in range(len(decoded["devices"][device]["firmwares"])):
-		version=decoded["devices"][device]["firmwares"][numb]["version"]
+	firmwares = []
+	for index in range(len(decoded_json["devices"][device]["firmwares"])):
+		version = decoded_json["devices"][device]["firmwares"][index]["version"]
 		if int(version[0]) >= 6:
-			single.append(version)
-	single.sort()
-	return '<device name="%s" version="%s"/>\n' % (devices[device], ','.join(single))
+			firmwares.append(version)
+	firmwares.sort()
+	return '<device name="%s" version="%s"/>\n' % (devices[device], ','.join(firmwares))
 
-final= "<root>\n"
+final = "<root>\n"
 for device in ordered_devices:
 	final += getVersionLine(device)
 final += "</root>"
 
-ios_file=open("Jailbreak Assistant/Resources/ios.xml", "w")
+ios_file = open("Jailbreak Assistant/Resources/ios.xml", "w")
 ios_file.write(final)
 ios_file.close()
