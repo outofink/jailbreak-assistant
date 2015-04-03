@@ -1,0 +1,15 @@
+Form1: main page
+Form2: Recovery Page
+Form6: Manual
+Form7: iPod MC or MB
+freezeme: freezeme
+greenpois0n61: greenpois0n for iOS 4.2.1
+Module1: which firmware to which page
+splash: splash screen (maybe?)
+redsn0w: redsn0w
+absinthe: absinthe
+5.0.1: for iOS 5.0.1 and 5.0, on the iPohne 4S
+5.1.1: for iOS 5.1.1
+4.2.1mc: for iOS 4.2.1 on MCXXX devices
+4.2.1mb: for iOS 4.2.1 on MBXXX devices
+

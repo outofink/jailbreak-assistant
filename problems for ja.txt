@@ -1,0 +1,7 @@
+    "does" not "is" for mc/mc dialog
+  radio instead of button for auto/manual
+bug auto bug from manual (sometimes) fix: unplug and plug back in
+side by side video and tool
+  button orientation main screen
+  change "Assist me!" to something that makes more sense
+    Fix "ATT" to "AT&T"
